@@ -15,7 +15,7 @@ const dataControllers = require('../controllers/dataController');
  *         description: Error interno del servidor
  */
 
-router.get('/clients', dataControllers.getAllDataClient);
+//router.get('/clients', dataControllers.getAllDataClient);
 
 /**
  * @swagger
@@ -60,7 +60,7 @@ router.get('/books', dataControllers.getAllDataBook);
  *       500:
  *         description: Error interno del servidor
  */
-router.post('/createClient', dataControllers.createDataCli );
+//router.post('/createClient', dataControllers.createDataCli );
 
 /**
  * @swagger
@@ -133,7 +133,7 @@ router.post('/createBook', dataControllers.createDataBook );
  */
 
 
-router.put('/updateClient/:id', dataControllers.updateDataCli);
+//router.put('/updateClient/:id', dataControllers.updateDataCli);
 
 /**
  * @swagger
@@ -197,7 +197,7 @@ router.put('/updateBook/:id', dataControllers.updateDataBook);
  *         description: Error interno del servidor
  */
 
-router.delete('/deleteClient/:id', dataControllers.deleteDataCli);
+//router.delete('/deleteClient/:id', dataControllers.deleteDataCli);
 
 
 /**
