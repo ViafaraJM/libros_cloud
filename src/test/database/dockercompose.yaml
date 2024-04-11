@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:14-alpine
+    container_name: database
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: Sebas1774
+      POSTGRES_USER: postgres
+      POSTGRES_DB: biblioteca
+    volumes:
+      - ./:/docker-entrypoint-initdb.d
+    command: ["postgres"]
+
+networks:
+  public:
+    name: public
+  private:
+    name: private
+#A
