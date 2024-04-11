@@ -1,25 +1,28 @@
-name: CI Pipeline
-on: [push, pull_request]
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "pruebas" ]
+  pull_request:
+    branches: [ "pruebas" ]
 
 jobs:
-  deploy-dev:
-    environment:
-      name: desarollo
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Java and Maven
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: maven
-
-      - name: Base de datos pruebas
-        working-directory: src/test/database/
-        run: docker compose up -d
-
-      - name: Pruebas
-        run: mvn test
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm run test
