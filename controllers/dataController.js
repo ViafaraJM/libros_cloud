@@ -149,3 +149,12 @@ exports.deleteDataBook = async (req, res) => {
     res.status(500).send('Error interno del servidor');
   }
 };
+
+exports.checkHealth = async (req, res) => {
+  try {
+    await pool.query('SELECT 1'); // Asume que este comando verifica la salud de tu conexión a la base de datos
+    res.status(200).json({ status: 'success', message: 'Backend and Database are healthy!' });
+  } catch (error) {
+    res.status(500).json({ status: 'failure', message: 'Health check failed', error: error.message });
+  }
+};

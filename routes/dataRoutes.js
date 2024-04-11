@@ -223,4 +223,6 @@ router.put('/updateBook/:id', dataControllers.updateDataBook);
 
 router.delete('/deleteBook/:id', dataControllers.deleteDataBook);
 
+router.get('/health', dataControllers.checkHealth);
+
 module.exports = router;
