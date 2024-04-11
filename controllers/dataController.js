@@ -15,7 +15,7 @@ const pool = new Pool({
 
 
 
-/*exports.getAllDataClient = async (req, res) => {
+exports.getAllDataClient = async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM cliente');
@@ -26,7 +26,7 @@ const pool = new Pool({
     console.error('Error al obtener datos:', err);
     res.status(500).send('Error interno del servidor');
   }
-};*/
+};
 
 
 exports.getAllDataBook = async (req, res) => {
@@ -45,7 +45,7 @@ exports.getAllDataBook = async (req, res) => {
 //--------------------------------------------------------------------------
 
 
-/*exports.createDataCli = async (req, res) => {
+exports.createDataCli = async (req, res) => {
   const { nombre, apellido, correo, telefono } = req.body;
   try {
     const client = await pool.connect();
@@ -57,7 +57,7 @@ exports.getAllDataBook = async (req, res) => {
     console.error('Error al crear un nuevo registro:', err);
     res.status(500).send('Error interno del servidor');
   }
-};*/
+};
 
 
 exports.createDataBook = async (req, res) => {
@@ -76,7 +76,7 @@ exports.createDataBook = async (req, res) => {
 
 //--------------------------------------------------------------------------------
 
-/*exports.updateDataCli = async (req, res) => {
+exports.updateDataCli = async (req, res) => {
   const id = req.params.id;
   const { nombre, apellido, correo, telefono  } = req.body;
   try {
@@ -92,7 +92,7 @@ exports.createDataBook = async (req, res) => {
     console.error('Error al actualizar el registro:', err);
     res.status(500).send('Error interno del servidor');
   }
-};*/
+};
 
 exports.updateDataBook = async (req, res) => {
   const id = req.params.id;
@@ -115,7 +115,7 @@ exports.updateDataBook = async (req, res) => {
 //------------------------------------------------------------------
 
 
-/*exports.deleteDataCli = async (req, res) => {
+exports.deleteDataCli = async (req, res) => {
   const id = req.params.id;
   try {
     const client = await pool.connect();
@@ -131,7 +131,7 @@ exports.updateDataBook = async (req, res) => {
     res.status(500).send('Error interno del servidor');
   }
 };
-*/
+
 
 exports.deleteDataBook = async (req, res) => {
   const id = req.params.id;
