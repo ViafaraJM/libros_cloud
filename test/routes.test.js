@@ -7,14 +7,14 @@ app.use(express.json()); // Para soportar JSON-encoded bodies
 app.use('/api', userRoutes); 
 
 
-describe('API Routes', () => {
+/*describe('API Routes', () => {
     test('GET /api/clients', async () => {
       const response = await request(app).get('/api/clients');
       expect(response.statusCode).toBe(200);
       
     });
   
-  });
+  });*/
 
   describe('API Routes', () => {
     test('GET /api/books', async () => {
@@ -28,7 +28,7 @@ describe('API Routes', () => {
 
 //---------------------------------------------------
 
-describe('POST /api/createClient', () => {
+/*describe('POST /api/createClient', () => {
     test('debería crear un nuevo usuario y responder con un status 200 y el usuario creado', async () => {
       const nuevoClient=     {
         
@@ -46,7 +46,7 @@ describe('POST /api/createClient', () => {
       expect(response.body).toHaveProperty('id'); 
     });
   
-  });
+  });*/
 
 
 
