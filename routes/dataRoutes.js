@@ -149,7 +149,7 @@ router.delete('/deleteBook/:id', dataControllers.deleteDataBook);
 
 /**
  * @swagger
- * /health/:
+ * /health:
  *   get:
  *     summary: Verifica la salud de la base de datos
  *     responses:
