@@ -3,7 +3,7 @@ name: Despliegue
 on:
   push:
     branches:
-      - main
+      - pruebas
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       - name: Constuir imagen
         id: docker
         run: |
-            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:${{ github.sha }}
+            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:${{ github.sha }} .
             docker push     gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:${{ github.sha }}
     
       - name: Despliegue en Kubernetes
