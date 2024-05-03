@@ -21,8 +21,8 @@ jobs:
     
       - name: Construir y publicar la imagen Docker
         run: |
-            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/produccion-devops:${{ github.sha }} . # Modificar: Cambia "tu-aplicacion" por el nombre real de tu aplicación.
-            docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/produccion-devops:${{ github.sha }} # Modificar: Confirma que la ruta de la imagen es correcta.
+            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/libros_cloud:${{ github.sha }} . # Modificar: Cambia "tu-aplicacion" por el nombre real de tu aplicación.
+            docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/libros_cloud:${{ github.sha }} # Modificar: Confirma que la ruta de la imagen es correcta.
                 
       - name: Despliegue en Kubernetes
         run: |
