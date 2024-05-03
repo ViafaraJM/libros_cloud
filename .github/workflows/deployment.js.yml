@@ -3,7 +3,7 @@ name: Despliegue
 on:
   push:
     branches:
-      - pruebas
+      - main
 
 jobs:
   build:
