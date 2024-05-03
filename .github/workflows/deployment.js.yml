@@ -22,8 +22,8 @@ jobs:
       - name: Constuir imagen
         id: docker
         run: |
-            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:${{ github.sha }} .
-            docker push     gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:${{ github.sha }}
+            docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:45886e371af081c5b91904bfadb03a0951218eb392026ed7a471e83bb7bdc44f .
+            docker push     gcr.io/${{ secrets.GCP_PROJECT_ID }}/cluster-1:$45886e371af081c5b91904bfadb03a0951218eb392026ed7a471e83bb7bdc44f
     
       - name: Despliegue en Kubernetes
         run: |
